@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,700&family=Lora:wght@700&family=Poppins:wght@300&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://mattboldt.com/demos/typed-js/"></script>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Roboto', sans-serif;
+
+
+        }
+
+        body {
+            color: #ededed;
+            background-color: #081b29;
+            /* cursor: auto; */
+            caret-color: white;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10px;
+            background: #051129;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            position: relative;
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: default;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+        }
+
+        .navbar a {
+
+            display: inline-block;
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+            opacity: 0;
+            animation: slideTop .5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+
+        .navbar a:hover {
+            color: #0ef;
+        }
+
+        .home {
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #081b29;
+            background-image: url(4b5f0b0e-b4df-4e59-ba45-759d6d3b1d60.jpg);
+            background-size: 25%;
+            background-position: right;
+            background-repeat: no-repeat;
+            border-color: #0ef;
+            display: flex;
+            align-items: center;
+            padding: 70px 10% 0;
+            background-position-x: 70%;
+        }
+
+        .home-content {
+            max-width: 600px;
+        }
+
+        .home-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            opacity: 0;
+            animation: slideBottom 1s ease forwards;
+            animation-delay: .7s;
+        }
+
+        .home-content h3:nth-of-type(2) {
+            margin-bottom: 30px;
+            animation: slideTop 1s ease forwards;
+            animation-delay: .7s;
+        }
+
+        .home-content h3 span {
+            color: #0ef;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin: -3px 0;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .home-content p {
+            font-size: 20px;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .home-sci a {
+            display: inline-flex;
+            justify-content: center;
+            width: 40px;
+            align-items: center;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #0ef;
+            font-size: 20px;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            color: #0ef;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+            transition: .5s ease;
+        }
+
+        .home-sci a:hover {
+            background: #0ef;
+            color: #081b29;
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        .btn-box1 {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+            margin-left: 20px;
+        }
+
+        .btn-box2 {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+            margin-left: 50%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-box1:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan
+        }
+
+        .btn-box2:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan
+        }
+
+        .About {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        .about-img img {
+            width: 100%;
+            /* Make the image responsive */
+            max-width: 400px;
+            /* Set a maximum width */
+            height: auto;
+            min-width: 135px;
+            margin-top: 100px;
+
+            border-radius: 50%;
+
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin-left: 10px;
+            font-size: medium;
+            padding-top: 80px;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+        }
+
+        .about-text h2 span {
+            color: #0ef;
+        }
+
+        .about-text h4 {
+            font-size: 29px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 0.2;
+            margin: 15px 0 30px;
+        }
+
+        .about-text p {
+            color: aliceblue;
+            font-size: 17px;
+            line-height: 1.2;
+            margin-bottom: 4rem;
+        }
+
+        #services {
+            color: aliceblue;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 4rem;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 60px;
+            padding-top: 70px;
+        }
+
+        .sub-title span {
+            color: #0ef;
+        }
+
+
+        .container {
+            padding: 90px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .services-list div {
+            background-color: transparent;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 13px;
+            border-right: 10px;
+            border-radius: 20px;
+            transition: 0.5s, transform 0.5s;
+            box-shadow: 1px 1px 20px #012290f7,
+                1px 1px 40px #0053b8f7
+        }
+
+        .services-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .services-list div h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .services-list div a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .read {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 5px #0ef,
+                0 0 25px #0ef;
+
+        }
+
+        .read:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan
+        }
+
+        .services-list div:hover {
+            transform: translateY(-20px);
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container1 {
+            width: 600px;
+            height: 1200px;
+            padding: 75px 90px;
+            margin-left: 120px;
+            overflow: hidden;
+
+        }
+
+        .heading1 {
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 5px;
+            margin-bottom: 50px;
+        }
+
+        .heading1 {
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 5px;
+            margin-bottom: 50px;
+        }
+
+        .bar {
+            font-size: 23px;
+        }
+
+        .Technical-bars .bar {
+            margin-top: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+        .nav {
+            font-size: 23px;
+        }
+
+        .Technical-bars .bar:first-child {
+            margin-top: 0;
+        }
+
+        .Technical-bars .bar:last-child {
+            margin-bottom: 0;
+        }
+
+        .Technical-bars .bar .info {
+            margin-bottom: 5px;
+        }
+
+        .Technical-bars .bar .info span {
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+        }
+
+        .Technical-bars .bar .progress-line {
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            height: 5px;
+            background-color: #000000;
+            animation: animate 1s cubic-bezier(1, 0, 0, 5) forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+
+        }
+
+        .techname {
+
+            margin-top: 3%;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-left: 4%;
+            padding-bottom: 20px;
+            flex-basis: 70%;
+            align-items: center;
+        }
+
+
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .Technical-bars .bar .progress-line span {
+            height: 100%;
+            background-color: #0ef;
+            position: absolute;
+            border-radius: 10px;
+            animation: animate 1s 1s cubic-bezier(1, 0, 0, 5) forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+            flex-basis: 100%;
+        }
+
+        .progress-line.java span {
+            width: 90%;
+
+        }
+
+        .progress-line.python span {
+            width: 80%;
+
+        }
+
+        .progress-line.csharp span {
+            width: 75%;
+
+        }
+
+        .progress-line.html span {
+            width: 90%;
+
+        }
+
+        .progress-line.css span {
+            width: 85%;
+
+        }
+
+        .progress-line.javascript span {
+            width: 75%;
+
+        }
+
+        .progress-line.sql span {
+            width: 80%;
+
+        }
+
+        .progress-line.mongodb span {
+            width: 75%;
+
+        }
+
+        .progress-line.nodejs span {
+            width: 70%;
+
+        }
+
+        .progress-line.linux span {
+            width: 80%;
+
+        }
+
+        .progress-line.github span {
+            width: 80%;
+
+        }
+
+        .progress-line.blockchain span {
+            width: 60%;
+
+        }
+
+        .progress-line span::after {
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28;
+            right: -20px;
+            animation: showText 0.5s linear forwards;
+            opacity: 0;
+
+        }
+
+        .progress-line.java span::after {
+            content: "90%";
+
+        }
+
+        .progress-line.python span::after {
+            content: "80%";
+
+        }
+
+        .progress-line.csharp span::after {
+            content: "75%";
+
+        }
+
+        .progress-line.html span::after {
+            content: "90%";
+
+        }
+
+        .progress-line.css span::after {
+            content: "85%";
+
+        }
+
+        .progress-line.javascript span::after {
+            content: "75%";
+
+        }
+
+        .progress-line.sql span::after {
+            content: "80%";
+
+        }
+
+        .progress-line.mongodb span::after {
+            content: "75%";
+
+        }
+
+        .progress-line.nodejs span::after {
+            content: "70%";
+
+        }
+
+        .progress-line.linux span::after {
+            content: "80%";
+
+        }
+
+        .progress-line.github span::after {
+            content: "80%";
+
+        }
+
+        .progress-line.blockchain span::after {
+            content: "60%";
+
+        }
+
+        .progress-line span::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-top-color: #000000;
+            top: -10px;
+            right: 0;
+            animation: 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+
+        @keyframes showText {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {}
+
+        .radial-bars {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+
+        }
+
+        .radial-bars .radial-bar {
+            width: 50%;
+            height: 170%;
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            margin-top: 35px;
+            flex-basis: 70%;
+        }
+
+        .radial-bars .radial-bar .percentage {
+            position: absolute;
+            left: 75%;
+            top: 40%;
+
+
+        }
+
+        .radial-bars .radial-bar .text {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            margin-bottom: 35%;
+            width: 100%;
+
+        }
+
+        .radial-bars .radial-bar svg {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 120px;
+            height: 190px;
+        }
+
+        .radial-bars .radial-bar .progress-bar {
+
+
+            stroke-width: 10;
+            stroke: black;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+            animation: animate-bar 1s linear forwards;
+
+        }
+
+        @keyframes animate-bar {
+            100% {
+                stroke-dashoffset: -1;
+            }
+        }
+
+        .path {
+
+            stroke-width: 10;
+            stroke: #0ef;
+            fill: transparent;
+            stroke-dasharray: 502;
+            stroke-dashoffset: 502;
+            stroke-linecap: round;
+        }
+
+        .path-1 {
+            animation: animate-path1 1s 1s linear forwards;
+        }
+
+        .path-2 {
+            animation: animate-path2 1s 1s linear forwards;
+        }
+
+        .path-3 {
+            animation: animate-path3 1s 1s linear forwards;
+        }
+
+        .path-4 {
+            animation: animate-path4 1s 1s linear forwards;
+        }
+
+        .path-5 {
+            animation: animate-path5 1s 1s linear forwards;
+        }
+
+        .path-6 {
+            animation: animate-path6 1s 1s linear forwards;
+        }
+
+
+        .portfolioSec {
+            /* width: 100%;
+  height: 700px; */
+            display: grid;
+            grid-template-columns: auto;
+            align-items: center;
+            gap: 3rem;
+            padding-left: 30px;
+            margin-top: 130px;
+        }
+
+        .main-text {
+            padding-top: 80px;
+            width: 100%;
+            flex-basis: 100%;
+        }
+
+        .main-text h2 {
+            font-size: 60px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 30px;
+
+
+        }
+
+        .main-text h2 span {
+            color: #0ef;
+
+        }
+
+        .portfolio-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .row {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .row img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
+            position: absolute;
+            border-radius: 8px;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+            text-align: center;
+            transition: height 0.5s;
+
+        }
+
+        .layer h5 {
+            color: #000;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+
+        }
+
+        .layer p {
+            color: #000;
+            font-size: 1 rem;
+            line-height: 1.8;
+        }
+
+        .layer i {
+            color: #ff004f;
+            margin-top: 20px;
+            font-size: 20px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .row:hover img {
+            transform: scale(1.1);
+        }
+
+        .row:hover .layer {
+            height: 100%;
+
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3rem;
+            padding-left: 30px;
+            margin-top: 130px;
+        }
+
+        .contact-text h2 {
+            font-size: 90px;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .contact-text h2 span {
+            color: #0ef;
+        }
+
+        .contact-text h4 {
+            margin: 15px 0;
+            color: rgb(228, 228, 228);
+            font-size: 20px;
+            font-weight: 600;
+
+
+        }
+
+        .contact-text p {
+            color: rgb(177, 177, 177);
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-list {
+            margin-bottom: 3rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-list i {
+            display: inline-block;
+            color: #0ef;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all .40s ease;
+
+
+        }
+
+        .contact-list li a:hover {
+            transform: scale(1.01) translateY(-5px);
+            color: #0ef;
+
+        }
+
+        .contact-icons i {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #0ef;
+            border-radius: 50%;
+            color: #0ef;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition: .5s, ease;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+
+        .contact-icons i:hover {
+            background: #0ef;
+            color: #000;
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        .contact-form form {
+            position: relative;
+        }
+
+        .contact-form form input,
+        form textarea {
+            border: none;
+            outline: none;
+            width: 90%;
+            padding: 18px;
+            background: #555557;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 220px;
+        }
+
+        .contact-form .send {
+            width: 90%;
+            display: inline-block;
+            padding: 20px 60px;
+            background-color: #0ef;
+            border-radius: 40px;
+            font-size: 18px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 5px #0ef,
+                0 0 25px #0ef;
+        }
+
+        .contact-form form .send:hover {
+            box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan
+        }
+
+        .last-text p {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: rgb(7, 85, 91);
+            font-weight: 300;
+            margin-top: 70px;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 2.1rem;
+            right: 2.1rem;
+        }
+
+        .top i {
+            color: #000;
+            background: #0ef;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        @keyframes animate-path1 {
+            100% {
+                stroke-dashoffset: 80;
+            }
+        }
+
+        @keyframes animate-path2 {
+            100% {
+                stroke-dashoffset: 45;
+            }
+        }
+
+        @keyframes animate-path3 {
+            100% {
+                stroke-dashoffset: 120;
+            }
+        }
+
+        @keyframes animate-path4 {
+            100% {
+                stroke-dashoffset: 80;
+            }
+        }
+
+        @keyframes animate-path5 {
+            100% {
+                stroke-dashoffset: 80;
+            }
+        }
+
+        @keyframes animate-path6 {
+            100% {
+                stroke-dashoffset: 45;
+            }
+        }
+
+
+
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideTop {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideBottom {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<script>
+    $(document).ready(function () {
+
+    })
+</script>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"> PORTFOLIO </a>
+        <nav class="navbar">
+            <a href="#home" style="--i:1" class="active">Home</a>
+            <a href="#about" style="--i:2">About</a>
+            <a href="#Skills" style="--i:3">Skills</a>
+            <a href="#project" style="--i:4">Projects</a>
+            <a href="#services" style="--i:4">Services</a>
+            <a href="#contact" style="--i:5">Contact</a>
+
+        </nav>
+
+    </header>
+    <section class="home animated-section" id="home">
+        <div class="home-content">
+            <h3>
+                Hello, It's Me!
+            </h3>
+            <h1>Srushti Kamble</h1>
+            <h3>And I'm a <span class="text"></span> </h3>
+            <p>I'm Pursuing MCA dual-specialization in Java technologies and Blockchain technologies.. </p>
+            <div class="home-sci">
+                <a href="https://www.linkedin.com/in/srushti-kamble-6b645b229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    style="--i:6" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://instagram.com/srushkamble_02?igshid=bTEyM2JndmtsbTY4" style="--i:7" target="_blank"><i
+                        class='bx bxl-instagram'></i></a>
+                <a href="https://github.com/Srushti4220" style="--i:8" target="_blank"><i class='bx bxl-github'></i></a>
+
+                <a href="t.me/SrushtiKamble02" style="--i:10" target="_blank"><i class='bx bxl-telegram'></i></a>
+                <a href="https://www.snapchat.com/add/srushtikamb5868" style="--i:11" target="_blank"><i
+                        class='bx bxl-snapchat'></i></a>
+
+
+            </div>
+            <a href="#about" class="btn-box1">More about me</a>
+
+        </div>
+    </section>
+    <section class="About" id="about" class="animated-section">
+        <div class="about-img">
+            <img src="4b5f0b0e-b4df-4e59-ba45-759d6d3b1d60.jpg">
+
+        </div>
+        <div class="about-text">
+            <h2>About <span> Me</span></h2><br>
+            <h4>Software development Aspirant!</h4><br>
+            <p> Hello, I am Srushti Shashikant Kamble. I am from Kolhapur, Maharashtra, India. I am currently pursuing
+                my Master's degree in the discipline of Master of Computer Application at Chhatrapati Shahu Institute of
+                Business Education and Research (CSIBER), Kolhapur. I completed my graduation in Computer Application
+                from Shivaji University, Kolhapur, with an aggregate of 78.75%.
+
+                I belong to a nuclear family. My father is a sales manager in a government food shop, and my mother is a
+                homemaker. I have two siblings.
+
+                So far, I have completed three internships. My first internship was in Human Resource Management at
+                Gursidak Foundation in Punjab, which was an online internship, where I worked as an HR Intern for 6
+                months. My second internship was at Universal
+                Tribes, Pune. I also interned at Codsoft as a Java
+                Programming Intern for one month online. Currently, I am working as a Trainee Software Intern at
+                Infodynamics Software Systems Private Limited in Kolhapur, where I'm using JSP, Servlets and apache
+                tomcat.
+
+                I am skilled in Java, web development, and .NET. Additionally, I am undertaking various certification
+                courses in blockchain, AWS, java, and software development technics to learn more about industry trends.
+
+                In my free time, I enjoy listening to music and internet surfing. One of my weakness is that I never
+                feel comfortable unless my work is completed within the allotted time.
+
+                My short-term goal is to complete my MCA degree with a good academic score and start my career as soon
+                as possible. My long-term goal is to become a more responsible and knowledgeable professional, holding a
+                respected position in my company where I can contribute meaningfully.</p>
+
+        </div>
+
+
+    </section>
+    <a href="#home" class="btn-box2">Go Back</a>
+
+    <section class="animated-section">
+        <div class="services" id="services">
+            <div class="container">
+                <h1 class="sub-title">My <span>Services</span></h1>
+                <div class="services-list">
+
+                    <div>
+                        <i class='bx bx-code-alt' style='color: #00eeff'></i>
+                        <h2> Website Development </h2>
+                        <P>Embark on a digital journey with our MERN stack mastery! 🌐 Tailored web solutions,
+                            responsive design, and innovation at every click. Elevate your online identity — contact us
+                            to transform your vision into a captivating reality! </P>
+                        <a href="#contact" class="read">learn more</a>
+                    </div>
+
+                    <div>
+                        <i class='bx bx-devices' style='color: #00eeff'></i>
+                        <h2> App Development </h2>
+                        <P>Embark on a journey of unparalleled app development with our expertise in Java and C#.Net
+                            Technologies. we craft tailored solutions, delivering sleek and intuitive interfaces that
+                            redefine user experiences. Harness the power of innovation and elevate your digital presence
+                            with apps that stand out.</P>
+                        <a href="#contact" class="read">learn more</a>
+                    </div>
+
+                    <div>
+                        <i class='bx bxs-data' style='color: #00eeff'></i>
+                        <h2> Database Design & Management </h2>
+                        <P>Transform your data landscape with our Database Design Wizardry! Elevate performance,
+                            optimize structures, and implement seamless solutions. Ready to harness the power of
+                            precision? Contact us today!</P>
+                        <a href="#contact" class="read">learn more</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h1 class="sub-title" id="Skills">My<span> Skills</span></h1>
+    <section class="animated-section">
+        <div class="container1">
+
+            <h1 class="heading1">Technical Skills</h1>
+
+            <div class="Technical-bars">
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <rect width="256" height="256" fill="#F4F2ED" rx="60" />
+                            <path fill="#4E7896"
+                                d="M101.634 182.619s-7.68 4.674 5.345 6.011c15.728 2.004 24.044 1.669 41.407-1.668c0 0 4.674 3.009 11.02 5.344c-39.075 16.696-88.497-1.002-57.772-9.687Zm-5.009-21.705s-8.35 6.346 4.674 7.679c17.028 1.669 30.391 2.004 53.433-2.667c0 0 3.009 3.341 8.015 5.01c-47.083 14.025-99.85 1.333-66.122-10.019v-.003Zm92.17 38.07s5.676 4.674-6.346 8.35c-22.376 6.678-93.839 8.685-113.876 0c-7.009-3.009 6.347-7.352 10.686-8.015c4.342-1.002 6.678-1.002 6.678-1.002c-7.68-5.344-51.095 11.02-22.041 15.729c79.813 13.027 145.603-5.676 124.896-15.028l.003-.034Zm-83.488-60.781s-36.402 8.685-13.028 11.687c10.019 1.333 29.721 1.002 48.089-.335c15.028-1.334 30.09-4.007 30.09-4.007s-5.345 2.338-9.017 4.674c-37.099 9.693-108.23 5.351-87.858-4.668c17.37-8.35 31.724-7.351 31.724-7.351Zm65.116 36.401c37.407-19.37 20.037-38.07 8.015-35.731c-3.009.667-4.342 1.334-4.342 1.334s1.001-2.004 3.34-2.667c23.709-8.35 42.413 25.046-7.679 38.07c0 0 .335-.335.666-1.002v-.004Zm-61.444 52.76c36.067 2.339 91.168-1.334 92.505-18.369c0 0-2.667 6.678-29.72 11.688c-30.722 5.676-68.796 5.009-91.168 1.333c0 0 4.674 4.007 28.386 5.344l-.003.004Z" />
+                            <path fill="#F58219"
+                                d="M147.685 28s20.704 21.039-19.702 52.76c-32.394 25.712-7.351 40.408 0 57.101c-19.035-17.028-32.722-32.059-23.377-46.085C118.331 71.083 156.062 61.064 147.685 28ZM137 123.842c9.683 11.02-2.667 21.039-2.667 21.039s24.711-12.686 13.359-28.387c-10.354-15.028-18.368-22.376 25.046-47.425c0 0-68.461 17.028-35.731 54.766l-.007.007Z" />
+                        </g>
+                    </svg> <span class="techname">Java</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line java">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logosPython0" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%">
+                                <stop offset="0%" stop-color="#387EB8" />
+                                <stop offset="100%" stop-color="#366994" />
+                            </linearGradient>
+                            <linearGradient id="logosPython1" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%">
+                                <stop offset="0%" stop-color="#FFE052" />
+                                <stop offset="100%" stop-color="#FFC331" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#logosPython0)"
+                            d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072ZM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.13Z" />
+                        <path fill="url(#logosPython1)"
+                            d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897Zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.131a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13Z" />
+                    </svg> <span class="techname">Python</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line python">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#9B4F96"
+                            d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7c-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z" />
+                        <path fill="#68217A"
+                            d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7c1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z" />
+                        <path fill="#fff"
+                            d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20c-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM97 66.2l.9-4.3h-4.2v-4.7h5.1L100 51h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6h-2.4v-4.7H97zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z" />
+                    </svg> <span class="techname">C# .Net Technologies</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line csharp">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 361" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#E44D26"
+                            d="m255.555 70.766l-23.241 260.36l-104.47 28.962l-104.182-28.922L.445 70.766h255.11Z" />
+                        <path fill="#F16529" d="m128 337.95l84.417-23.403l19.86-222.49H128V337.95Z" />
+                        <path fill="#EBEBEB"
+                            d="M82.82 155.932H128v-31.937H47.917l.764 8.568l7.85 88.01H128v-31.937H85.739l-2.919-32.704Zm7.198 80.61h-32.06l4.474 50.146l65.421 18.16l.147-.04V271.58l-.14.037l-35.568-9.604l-2.274-25.471Z" />
+                        <path
+                            d="M24.18 0h16.23v16.035h14.847V0h16.231v48.558h-16.23v-16.26H40.411v16.26h-16.23V0Zm68.65 16.103H78.544V0h44.814v16.103h-14.295v32.455h-16.23V16.103h-.001ZM130.47 0h16.923l10.41 17.062L168.203 0h16.93v48.558h-16.164V24.49l-11.166 17.265h-.28L146.35 24.49v24.068h-15.88V0Zm62.74 0h16.235v32.508h22.824v16.05h-39.06V0Z" />
+                        <path fill="#FFF"
+                            d="M127.89 220.573h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576H127.89v31.937Zm0-64.719v.078h77.143l.64-7.178l1.456-16.191l.763-8.568H127.89v31.86Z" />
+                    </svg> <span class="techname">HTML</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 361" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#264DE4"
+                            d="M127.844 360.088L23.662 331.166L.445 70.766h255.11l-23.241 260.36l-104.47 28.962Z" />
+                        <path fill="#2965F1" d="m212.417 314.547l19.86-222.49H128V337.95l84.417-23.403Z" />
+                        <path fill="#EBEBEB"
+                            d="m53.669 188.636l2.862 31.937H128v-31.937H53.669Zm-5.752-64.641l2.903 31.937H128v-31.937H47.917ZM128 271.58l-.14.037l-35.568-9.604l-2.274-25.471h-32.06l4.474 50.146l65.421 18.16l.147-.04V271.58Z" />
+                        <path
+                            d="M60.484 0h38.68v16.176H76.66v16.176h22.506v16.175H60.484V0Zm46.417 0h38.681v14.066h-22.505v2.813h22.505v32.352h-38.68V34.46h22.505v-2.813H106.9V0Zm46.418 0H192v14.066h-22.505v2.813H192v32.352h-38.681V34.46h22.505v-2.813H153.32V0Z" />
+                        <path fill="#FFF"
+                            d="m202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08l.779-8.576Z" />
+                    </svg> <span class="techname">CSS</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <rect width="256" height="256" fill="#F0DB4F" rx="60" />
+                            <path fill="#323330"
+                                d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.889-3.092 12.889-15.12v-81.798h24.058v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.579c-17.357-7.388-28.871-16.668-28.871-36.258c0-18.044 13.748-31.792 35.229-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.731 12.029c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.139 14.778 14.608l6.014 2.577c20.449 8.765 31.963 17.699 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574" />
+                        </g>
+                    </svg><span class="techname">Javascript</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line javascript">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffda44"
+                            d="M8.562 15.256A21.159 21.159 0 0 0 16 16.449a21.159 21.159 0 0 0 7.438-1.194c1.864-.727 2.525-1.535 2.525-2V9.7a10.357 10.357 0 0 1-2.084 1.076A22.293 22.293 0 0 1 16 12.078a22.36 22.36 0 0 1-7.879-1.3A10.28 10.28 0 0 1 6.037 9.7v3.55c0 .474.663 1.278 2.525 2.006Zm0 6.705a15.611 15.611 0 0 0 2.6.741a24.9 24.9 0 0 0 4.838.453a24.9 24.9 0 0 0 4.838-.452a15.614 15.614 0 0 0 2.6-.741c1.864-.727 2.525-1.535 2.525-2v-3.39a10.706 10.706 0 0 1-1.692.825A23.49 23.49 0 0 1 16 18.74a23.49 23.49 0 0 1-8.271-1.348a10.829 10.829 0 0 1-1.692-.825v3.393c0 .466.663 1.271 2.525 2.001ZM16 30c5.5 0 9.963-1.744 9.963-3.894v-2.837a10.5 10.5 0 0 1-1.535.762l-.157.063A23.487 23.487 0 0 1 16 25.445a23.422 23.422 0 0 1-8.271-1.351c-.054-.02-.106-.043-.157-.063a10.5 10.5 0 0 1-1.535-.762v2.837C6.037 28.256 10.5 30 16 30Z" />
+                        <ellipse cx="16" cy="5.894" fill="#ffda44" rx="9.963" ry="3.894" />
+                    </svg><span class="techname">SQL</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line sql">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <rect width="256" height="256" fill="#023430" rx="60" />
+                            <path fill="#10AA50"
+                                d="M171.173 107.591c-10.537-46.481-32.497-58.855-38.099-67.602A99.398 99.398 0 0 1 126.949 28c-.296 4.13-.84 6.73-4.35 9.862c-7.047 6.283-36.977 30.673-39.496 83.486c-2.347 49.242 36.2 79.605 41.292 82.744c3.916 1.927 8.685.041 11.012-1.728c18.581-12.752 43.969-46.75 35.786-94.773" />
+                            <path fill="#B8C4C2"
+                                d="M128.545 177.871c-.97 12.188-1.665 19.27-4.129 26.235c0 0 1.617 11.603 2.753 23.894h4.019a223.446 223.446 0 0 1 4.384-25.732c-5.203-2.56-6.827-13.702-7.027-24.397Z" />
+                            <path fill="#12924F"
+                                d="M135.565 202.275c-5.258-2.429-6.779-13.806-7.013-24.404a499.824 499.824 0 0 0 1.136-52.545c-.276-9.194.13-85.158-2.265-96.28a92.425 92.425 0 0 0 5.651 10.936c5.602 8.754 27.569 21.128 38.099 67.609c8.203 47.941-17.047 81.849-35.608 94.684Z" />
+                        </g>
+                    </svg> <span class="techname">MongoDB</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line mongodb">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <rect width="256" height="256" fill="#242938" rx="60" />
+                            <path fill="#81CD39"
+                                d="M119.878 31.116c4.919-2.815 11.325-2.828 16.239 0c24.722 13.97 49.452 27.917 74.17 41.895c4.65 2.619 7.759 7.793 7.712 13.15v84.045c.035 5.579-3.382 10.877-8.287 13.436c-24.641 13.893-49.27 27.802-73.907 41.695c-5.019 2.87-11.554 2.649-16.418-.457c-7.387-4.282-14.787-8.544-22.175-12.822c-1.51-.9-3.212-1.616-4.278-3.08c.943-1.27 2.628-1.428 3.997-1.983c3.083-.981 5.916-2.555 8.748-4.082c.717-.49 1.591-.302 2.278.136c6.317 3.622 12.579 7.35 18.917 10.937c1.352.781 2.721-.256 3.877-.9c24.18-13.667 48.39-27.281 72.567-40.952c.896-.431 1.391-1.382 1.318-2.363c.017-27.725.004-55.454.009-83.18c.102-1.112-.542-2.136-1.549-2.592c-24.555-13.829-49.099-27.678-73.65-41.51a2.557 2.557 0 0 0-2.892-.005c-24.552 13.837-49.09 27.7-73.642 41.527c-1.003.457-1.676 1.464-1.557 2.58c.005 27.726 0 55.455 0 83.184a2.352 2.352 0 0 0 1.336 2.334c6.551 3.715 13.111 7.404 19.667 11.107c3.694 1.987 8.228 3.169 12.297 1.646c3.591-1.288 6.108-4.953 6.04-8.765c.034-27.563-.017-55.13.025-82.69c-.09-1.223 1.071-2.234 2.261-2.118c3.148-.022 6.3-.043 9.448.008c1.314-.03 2.218 1.288 2.056 2.52c-.013 27.738.034 55.476-.021 83.213c.008 7.393-3.029 15.437-9.867 19.054c-8.423 4.363-18.835 3.438-27.157-.746c-7.204-3.596-14.08-7.84-21.156-11.692c-4.918-2.545-8.318-7.864-8.283-13.439V86.161c-.052-5.468 3.181-10.736 7.975-13.317c24.637-13.903 49.27-27.818 73.902-41.728Z" />
+                            <path fill="#81CD39"
+                                d="M141.372 89.335c10.745-.692 22.248-.41 31.917 4.884c7.487 4.056 11.637 12.57 11.769 20.887c-.209 1.121-1.382 1.74-2.453 1.663c-3.117-.004-6.236.043-9.353-.021c-1.323.051-2.091-1.168-2.257-2.337c-.896-3.98-3.067-7.921-6.812-9.841c-5.75-2.878-12.416-2.733-18.686-2.673c-4.577.242-9.499.639-13.377 3.33c-2.977 2.039-3.881 6.155-2.819 9.47c1.002 2.38 3.749 3.148 5.998 3.856c12.949 3.387 26.671 3.049 39.373 7.506c5.259 1.817 10.403 5.35 12.203 10.856c2.355 7.38 1.323 16.2-3.928 22.124c-4.258 4.875-10.459 7.529-16.644 8.97c-8.228 1.835-16.767 1.882-25.123 1.067c-7.857-.896-16.034-2.96-22.099-8.313c-5.187-4.504-7.72-11.522-7.469-18.294c.06-1.144 1.199-1.942 2.295-1.848c3.139-.025 6.279-.034 9.418.005c1.255-.09 2.184.994 2.249 2.176c.578 3.791 2.003 7.771 5.31 10.018c6.38 4.117 14.387 3.835 21.693 3.95c6.053-.268 12.848-.349 17.787-4.35c2.606-2.282 3.378-6.1 2.674-9.384c-.763-2.773-3.664-4.065-6.155-4.91c-12.783-4.043-26.659-2.576-39.318-7.149c-5.14-1.816-10.11-5.25-12.084-10.53c-2.755-7.473-1.493-16.717 4.308-22.44c5.656-5.695 13.82-7.888 21.583-8.672" />
+                        </g>
+                    </svg><span class="techname">Node.js</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line nodejs">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none">
+                            <rect width="256" height="256" fill="#F4F2ED" rx="60" />
+                            <path fill="#ECEFF1"
+                                d="m85.95 199.926l24.53 13.62h37.096l34.702-26.055l15.556-40.859l-35.899-43.227l-10.171-24.278l-49.66 1.776l.598 13.62l-9.573 17.764l-14.958 29.016l-2.991 24.278l10.77 34.345Z" />
+                            <path fill="#263238"
+                                d="M187.064 114.656c-9.573-13.62-17.351-21.91-21.539-39.082c-4.188-17.173 1.197-12.435-2.393-27.24c-1.795-7.697-4.787-13.027-7.778-17.172c-3.59-4.145-7.778-6.514-10.172-7.106c-5.384-2.96-17.949-7.698-33.505.592c-16.155 8.29-14.36 26.055-11.368 62.177c0 2.368-.599 5.33-1.795 7.698c-2.393 5.33-6.582 10.066-10.171 14.212c-4.189 5.921-8.377 11.843-11.368 18.356c-7.18 13.62-13.762 30.792-11.967 37.306c2.992-.592 40.686 56.255 40.686 57.439c2.393-.592 12.564-.592 21.539-.592c12.565-.592 19.744-1.184 29.916 1.184c0-1.776-.599-3.553-.599-5.329c0-3.553.599-6.514 1.197-10.659c.598-2.961 1.197-5.921 1.795-9.474c-5.983 5.329-16.753 11.251-26.924 13.027c-8.975 1.776-23.933-1.184-31.113-10.067c.599 0 1.795 0 2.394-.592c1.795-.592 3.59-1.184 4.188-2.368c1.795-2.961.598-5.922-.598-7.698c-1.197-1.777-10.172-8.291-14.36-11.843c-4.188-3.553-6.581-5.33-8.975-7.698l-4.786-4.738c-1.197-1.184-1.795-2.368-2.393-2.961c-1.197-2.96-1.795-6.513-1.197-11.25c.598-6.514 2.991-11.844 5.983-17.765c1.197-2.369 4.188-7.106 4.188-7.106s-10.171 24.871-4.786 32.569c0 0 .598-7.698 2.991-15.396c1.795-5.33 4.787-13.028 8.377-17.173c3.59-4.145 12.564-19.541 13.163-29.016c0-4.145.598-8.29.598-11.25c-2.393-2.37 39.489-8.29 41.882-1.777c.598 2.369 8.975 23.686 13.761 34.937c2.393 5.33 5.385 10.067 7.18 15.988c1.795 6.514 2.991 15.396 2.991 24.279c0 1.776 0 4.737-.598 7.698c1.197 0 24.531-24.871-2.991-45.596c0 0 16.752 7.698 17.351 23.094c.598 12.435-4.787 22.502-5.983 24.278c.598 0 12.564 5.33 13.162 5.33c2.394 0 7.18-1.777 7.18-1.777c.599-1.776 2.393-6.514 2.393-8.29c4.189-13.62-5.983-35.529-15.556-49.149Z" />
+                            <path fill="#ECEFF1"
+                                d="M111.078 75.574c4.296 0 7.778-5.303 7.778-11.843c0-6.541-3.482-11.843-7.778-11.843c-4.295 0-7.778 5.302-7.778 11.843c0 6.54 3.483 11.843 7.778 11.843Zm26.924 1.184c5.618 0 10.172-6.098 10.172-13.62c0-7.521-4.554-13.619-10.172-13.619c-5.617 0-10.171 6.098-10.171 13.62c0 7.521 4.554 13.62 10.171 13.62Z" />
+                            <path fill="#212121"
+                                d="M115.424 64.541c-.497-3.893-2.761-6.817-5.056-6.53c-2.294.287-3.752 3.676-3.254 7.57c.497 3.893 2.76 6.817 5.055 6.53c2.295-.288 3.752-3.677 3.255-7.57Zm21.981 8.664c3.304 0 5.983-3.446 5.983-7.698c0-4.251-2.679-7.698-5.983-7.698c-3.305 0-5.984 3.447-5.984 7.698c0 4.252 2.679 7.698 5.984 7.698Z" />
+                            <path fill="#FFC107"
+                                d="M216.98 195.781c-2.393-1.184-6.582-2.961-10.172-8.29c-1.794-2.961-1.196-11.251-4.188-14.804c-1.795-2.368-4.188-1.184-4.786-1.184c-5.385 1.184-17.95 9.474-26.326 0c-1.197-1.184-2.992-2.961-5.983-2.961c-2.992 0-4.188 1.184-5.385 3.553c-1.197 2.369-1.197 4.145-1.197 10.067c0 4.737 0 10.066-.598 14.211c-1.197 10.067-2.991 15.989-2.991 21.91c0 6.514 1.794 10.659 4.188 12.435c1.795 1.777 4.786 2.961 11.368 2.961c6.581 0 10.769-2.368 14.958-6.514c2.991-2.96 5.384-4.145 13.761-10.066c6.581-4.145 16.753-9.475 18.547-11.251c1.197-1.184 2.992-1.777 2.992-5.33c0-2.96-2.393-4.145-4.188-4.737Zm-120.261 1.777c-5.983-9.475-6.582-11.251-10.77-17.173c-3.59-5.921-11.368-17.172-16.154-17.172c-3.59 0-5.385 1.776-7.778 4.145c-2.394 2.368-4.787 7.698-8.975 10.659c-3.59 2.96-13.761 2.368-16.154 5.921c-2.394 3.553 2.393 8.883 2.393 17.765c0 3.553-2.992 5.921-3.59 8.29c-.598 2.961-1.197 4.737 0 7.106c2.393 3.553 5.385 4.737 25.727 8.882c10.77 2.369 20.941 8.29 27.523 8.883c6.581.592 17.949 0 17.949-15.989c.599-9.474-4.786-11.843-10.171-21.317Zm11.368-107.18c-3.59-2.369-6.582-4.738-6.582-8.29c0-3.553 2.394-4.738 5.984-7.698c.598-.593 7.179-6.514 13.761-6.514c6.581 0 14.359 4.145 17.351 5.33c5.385 1.183 10.769 2.368 10.171 6.513c-.598 5.921-1.196 7.106-7.18 10.067c-4.188 1.184-11.966 7.698-17.351 7.698c-2.393 0-5.983 0-8.376-.593c-1.795-.592-4.787-3.553-7.778-6.513Z" />
+                            <path fill="#634703"
+                                d="M106.89 85.64c1.197 1.185 2.992 2.37 4.787 2.961c1.196.592 2.991 1.185 2.991 1.185h5.385c2.992 0 7.18-1.185 11.368-3.553c4.188-1.777 4.787-2.961 7.778-4.145c2.992-1.777 5.983-3.553 4.787-4.145c-1.197-.593-2.394 0-6.582 2.368c-3.59 2.369-6.581 3.553-10.171 5.33c-1.795.592-4.188 1.776-5.983 1.776h-5.385c-1.795 0-2.992-.592-4.787-1.184c-1.196-.593-1.795-1.185-2.393-1.185c-1.196-.592-3.59-2.96-4.786-3.553c0 0-1.197 0-.599.593l3.59 3.553Zm17.95-13.027c.598 1.184 1.795 1.184 2.393 1.776c.598.593 1.197.593 1.197.593c.598-.593 0-1.777-.599-1.777c0-1.184-2.991-1.184-2.991-.592Zm-9.573 1.184c0 .593 1.196 1.185 1.196.593c.599-.593 1.197-1.185 1.795-1.185c1.197-.592.598-1.184-1.196-1.184c-1.197.592-1.197 1.184-1.795 1.776Z" />
+                            <path fill="#455A64"
+                                d="M173.303 178.609v1.776c1.197 2.369 4.188 2.961 6.581 2.961c3.59 0 7.18-2.369 8.975-4.737c0-.592.598-1.185 1.197-1.777c1.196-1.776 1.795-2.96 2.393-3.553c0 0-.598-.592-.598-1.184c-.599-1.184-2.394-2.369-4.787-2.961c-1.795-.592-4.786-1.184-5.983-1.184c-5.385-.592-8.376 1.184-10.171 2.961c0 0 .598 0 .598.592c1.197 1.184 1.795 2.369 1.795 4.145c.598 1.184 0 1.776 0 2.961Z" />
+                        </g>
+                    </svg><span class="techname">Linux</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line linux">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor"
+                            d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
+                    </svg><span class="techname">Github</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line github">
+                        <span></span>
+                    </div>
+                </div><br>
+
+                <div class="bar"><svg width="40" height="40" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="4">
+                            <path
+                                d="M40 30V15L27.5 7.969m-7 0L8 15v15m3 4.688L24 42l8-4.5l5-2.813M21 18.75l-3 1.75v7l3 1.75L24 31l3-1.75l3-1.75v-7l-3-1.75L24 17l-3 1.75ZM24 17v-7m6 17l7 4m-19-4l-7 4" />
+                            <circle cx="24" cy="7" r="3" />
+                            <circle cx="8" cy="33" r="3" />
+                            <circle cx="40" cy="33" r="3" />
+                        </g>
+                    </svg> <span class="techname">Blockchain Technologies</span>
+                    <div class="info">
+
+                    </div>
+                    <div class="progress-line blockchain">
+                        <span></span>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="container1">
+            <h1 class="heading1">Professional Skills</h1>
+            <div class="radial-bars">
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Creativity</div>
+
+                </div>
+
+
+                <div class="radial-bar">
+
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">Communication</div>
+                </div>
+
+                <div class="radial-bar">
+
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">75%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+
+                <div class="radial-bar">
+
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Teamwork</div>
+                </div>
+
+                <div class="radial-bar">
+
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-5" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Leadership</div>
+                </div>
+
+                <div class="radial-bar">
+
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-6" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">Interpersonal Skills</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolioSec">
+        <div id="portfolio" id="project">
+            <div class="main-text" id="project">
+                <h2>Latest<span>Project</span></h2>
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="https://media.istockphoto.com/id/1291971619/photo/web-development-and-web-design-concept-in-dark-blue-background-programming-for-internet.jpg?s=612x612&w=0&k=20&c=sSig-r_QpF1j6BPxRJS-eodryLy6rQR7RUMmtW5OuOw="
+                            height="500px" width="500px">
+                        <div class="layer">
+                            <h5>Web Developement</h5>
+                            <p>In the realm of web development,
+                                I sculpted a vibrant blog platform using the MERN stack — MongoDB, Express.js, React,
+                                and Node.js.
+                                This project seamlessly integrates user authentication,
+                                an intuitive UI for exploring diverse blogs. With a keen focus on security and
+                                optimization, this dynamic website embodies my commitment to delivering engaging,
+                                secure, and user-centric online experiences.</p>
+                            <a href="https://docs.google.com/document/d/1AE5T_3I2nN2Bom9_2vVvWmko24nmxuBI/edit?usp=sharing&ouid=111797921453127144352&rtpof=true&sd=true"
+                                target="_blank"><i class='bx bx-link-external' style="color: rgb(33, 33, 128);"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <img src="https://i.pinimg.com/736x/ff/06/c6/ff06c61db17950af39128c06f56e49d5.jpg"
+                            height="415px" width="415px">
+                        <div class="layer">
+                            <h5>Desktop App Developement</h5>
+                            <p>Discover efficiency in blood bank management! 🩸💻 Our C# and ADO.NET desktop app lets
+                                you effortlessly save, update, and generate reports for patient and donor records. Join
+                                us in making a life-saving impact through technology.</p>
+                            <a href="https://drive.google.com/file/d/1bhAUG1INyLS8Z9BY7cY5uf-jOYWBialP/view?usp=sharing"
+                                target="_blank"><i class='bx bx-link-external' style="color:rgb(33, 33, 128);"></i></a>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact" class="animated-section">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Join Forces for Creative Brilliance!</h4>
+            <p>Let's connect and turn your ideas into reality! Whether you have questions, collaboration proposals, or
+                just want to say hello, I'm here. Drop me a message, and let's start a conversation that could lead to
+                something amazing. Your thoughts matter, and I'm excited to hear from you!</p>
+            <div class="contact-list">
+                <li><i class='bx bxs-send'></i>kamblesrush@gmail.com </li>
+                <li><i class='bx bxs-send'></i>srushtikotekar4220@gmail.com</li>
+
+            </div>
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/srushti-kamble-6b645b229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com/srushkamble_02?igshid=bTEyM2JndmtsbTY4" target="_blank"><i
+                        class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://github.com/Srushti4220" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="t.me/SrushtiKamble02" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.snapchat.com/add/srushtikamb5868" target="_blank"><i
+                        class="fa-brands fa-snapchat"></i></a>
+            </div>
+
+        </div>
+
+        <div class="contact-form">
+            <form action="/submit" method="post">
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="email" placeholder="Email" name="email" required>
+                <textarea name="message" cols="40" rows="10" placeholder="Message" required></textarea>
+                <input type="submit" value="Submit" class="send">
+            </form>
+        </div>
+
+    </section>
+    <div class="last-text">
+        <p>Developed with love by srushti kamble @ 2023</p>
+    </div>
+    <a href="#" class="top"> <i class='bx bxs-up-arrow-circle'></i></a>
+
+
+
+
+
+
+
+
+    <script>
+        var typed = new Typed(".text",
+            {
+                strings: ["Software Developement Intern", "MCA Student", "Volunteer"],
+                typeSpeed: 100,
+                backSpeed: 100,
+                backDelay: 1000,
+                loop: true,
+                showCursor: false
+
+            }
+        );
+
+
+
+    </script>
+</body>
+
+</html>
